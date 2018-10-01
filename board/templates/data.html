@@ -1,0 +1,69 @@
+<html>
+  <body>
+    
+    <table width=700 height=600 align="center" frame="hside" border=1> 
+      <tr>
+        <td align="center" height=40 width=160>제목</td>
+        <td>{{data['title']}}</td>
+        
+      </tr>
+      <tr>
+        <td align="center"> 내용</td>
+        <td valign="top">{{data['data']}}</td>
+      </tr>
+      <form name="download" action="/upload/{{data['upload']}}" method>
+      <tr>
+        <td>첨부파일</td>
+        <td height="10"><a href="/upload/{{data['upload']}}">{{data['upload']}}</a></td>
+        </tr>
+        </form>
+      </table>
+      <table width=700 align="center"> 
+        <tr>
+          <td align="right"> 
+      <form name="change" action="/board_update" method="POST"> 
+        <input type="submit" value="수정">
+        </form>
+        </td>
+        </tr>
+        </table>
+        <table width=700 align="center">
+        <tr>
+          <td align="right"> 
+      <form name="delete" action="/board_delete" method="POST">
+        <input type="submit" value="삭제">
+        <input type="button" value="뒤로가기 "onclick="location.href='/board'">
+        </form>
+        </td>
+        </tr>
+        </table>
+
+        <table width=700 align="center">
+          <tr>
+          <form name=reply action="/data?index={{index_}}"  method="POST" >
+            <td><input type="text" name="replydata" size=30>
+            <input type="submit" value="등록"></td>        
+            </tr>
+            {% if reply_list != None %}
+            {% for j in reply_list %}
+            
+            <tr>
+              <td>{{j['user_id']}}</td>
+              <td>{{j['context']}}</td>
+              {% if j['user_id'] == session['user_id'] %}  
+                <td><a href="/modi?index={{index_}}&replyindex={{j['idx']}}"><input type="button" value="수정" ></a></td>
+                <td><a href="/replydelete?index={{index_}}&replyindex={{j['idx']}}"><input type="button" value="삭제"></a> </td>
+          </tr>  
+          </form>
+              {% endif %}
+              
+            {% endfor %}
+            {% endif %}
+            </form>
+          </table>
+          <table>
+            <tr>
+              </tr>
+            </table>
+    </body>
+  </html>

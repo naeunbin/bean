@@ -1,0 +1,26 @@
+<html>
+  <body>
+    <form name="write" action="/write" method="POST" enctype="multipart/form-data">
+    <table width=700 height=600 align="center" frame="hside" border=1>
+      <tr>
+        <td align = "center" height=40 width=160>제목</td>
+        <td><input type="text" name="title" size=70></td>
+        </tr>
+        <tr>
+          <td align="center">내용 </td>
+          <td><textarea cols=80 rows=40 name="data"></textarea></td>
+           </tr>
+           <tr>
+             <td><input type="file" name="_file"></td>
+                  </tr>
+                  <tr>
+             <td colspan=2 align="center"><input type="submit" value="제출"><input type="button" value="뒤로가기" onclick="location.href='/board'"></td>
+            </tr>
+     
+ 
+                  </form>
+   
+      </table>
+      </form>
+    <body>
+  </html>

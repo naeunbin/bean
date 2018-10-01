@@ -1,0 +1,32 @@
+<html>
+  <head><h1 align="center">게시글 수정</h1> 
+    <script>
+      function btn_click(str){
+        if(str == "modify"){
+        modify.action ="/board_update";}
+        else if(str == "delete"){
+        modify.action = "/board_delete"}
+        else {
+        modify.action = ""}}
+      </script>
+  </head>
+  <body>
+    <form name="modify" action="/board_update"method="POST">
+    <table width=700 height=600 align="center" frame="hside" border=1>
+      <tr>
+        <td align="center" height=40 width=160>제목</td>
+        <td><input type="text" name="title" size=70></td>
+      </tr>
+      <tr>
+        <td align="center">내용</td>
+        <td>
+          <textarea cols=80 rows=40  name="data"></textarea></td>
+      </tr>
+        <tr>
+          <td colspan=2 align="right"><input type="submit" value="수정" onclick ="btn_click('modify');"> 
+            <input type="button" value="뒤로가기" onclick='location.href="/data?index={{myindex}}"'></td>
+      </tr>
+    </table>
+    </form>
+  </body>
+  </html>

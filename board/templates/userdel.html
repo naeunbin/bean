@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <table>
+      <tr><td><h2>회원탈퇴</h2></td></tr>
+      <tr>
+        <form name="userdel" action="/userdel" method="POST">
+        <td>아이디</td><td>{{user_id}}</td>
+        </tr>
+        <tr>
+          <td>비밀번호</td><td><input type="password" name="pw"></td>
+          </tr>
+          <tr>
+            <td><input type="submit"><input type="button" value="뒤로가기" onclick="location.href='/secret'"></td>
+            </tr>
+      </table>
+    </body>
+  </html>

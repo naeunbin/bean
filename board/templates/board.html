@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <h2 align="center">게시판</h2>
+    <table width=1000  align="center" frame="hside" border=1>
+     <tr>
+       <td width="15" align="center">번호</td>
+       <td width="60" align="center">글 제목</td>
+       <td width="20" align="center">작성자</td>
+       <td width="15" align="center">작성일</td>
+       </tr>
+       {% for i in data%}
+
+       <tr>
+         <td width="15" align="center">{{i['idx']}}</td>
+         <td width ="60" align="center"><a href=/data?index={{i['idx']}}>{{i['title']}}</a></td> 
+         <td width="20" align="center">{{i['user_id']}}</td>
+         <td width="15" align="center">{{i['time']}}</td>
+         </tr>
+       
+         {% endfor%}
+     
+       <tr>
+        <form name ="write" action="/write">
+          <td colspan=4 align="right"> <input type="submit" value="글쓰기" >
+            <input type="button" value="뒤로가기" onclick="location.href='/secret'"></td>
+          </form>
+          </tr>
+          </table>
+    </body>
+  </html>

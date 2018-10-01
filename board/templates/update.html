@@ -1,0 +1,15 @@
+<html>
+  <head><h1>회원정보 수정</h1> </head>
+  <body>
+    <table>
+      <tr>
+    <form name=gg action="/update" method="POST">
+      <td> 비밀번호</td> <td><input type="text" name="update_pw"></td></tr>
+      <tr><td> 이메일 </td> <td><input type="text" name="update_em" value={{data['user_em']}}></td></tr>
+      <tr><td> 닉네임</td> <td><input type="text" name="update_nname" value={{data['nname']}}></td></tr>
+      <tr><td> 폰번호</td><td><input type="number" name="update_pnum" value={{data['pnum']}}></td></tr>
+      <tr><td><input type="submit"> <input type="button" value="뒤로가기" onclick="location.href='/secret'"></td>
+      </tr>
+      </table>
+    </body>
+  </html>

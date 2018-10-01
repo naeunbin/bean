@@ -1,0 +1,27 @@
+<html>
+  <head><h1>게시글 수정</h1> 
+    <script>
+      function btn_click(str){
+        if(str == "modify"){
+        modify.action ="/board_update";}
+        else if(str == "delete"){
+        modify.action = "/board_delete"}
+        else {
+        modify.action = ""}}
+      </script>
+  </head>
+  <body>
+    <table>
+    <form name="modify" action='/board_update'method="POST">
+      <tr><td>제목</td>
+        <td><input type="text" name="title"></td></tr>
+      <tr><td>내용</td>
+        <td><input type="text" name="data"></td></tr>
+      <tr>
+      <input type="submit" value="수정" onclick ='btn_click("modify");'> 
+      <input type="button" value="뒤로가기" onclick='location.href="/data?index={{myindex}}"'>
+      <input type="submit" value="삭제" onclick='btn_click("delete");' >
+      </tr>
+    </table>
+  </body>
+  </html>
